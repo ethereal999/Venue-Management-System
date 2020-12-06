@@ -1,0 +1,214 @@
+{% extends 'base/base.html' %}
+{%load static %}
+{%block content%}
+
+<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet"> 
+
+<link href="https://fonts.googleapis.com/css?family=Rye&display=swap" rel="stylesheet">
+
+
+<div class="row" >
+<div class="center">
+<h4 class="blue-text" style="font-family: 'Pacifico', cursive;margin: 4rem 0 4% 0;font-size:4rem">Looking for a Venue! </h4>
+<h4 class="blue-text" style="font-family: 'Pacifico', cursive;margin: 0 0 4% 0;line-height: 25%;font-size:2.5rem">We have it ready for you...</h4>
+</div>
+     <form action="/book" method="POST">
+        {% csrf_token %}
+ <div class="row">
+    <div id="wrapper1" class="col s5 offset-s1 input-field">
+
+      <input type="date" id="start1" class="datepicker-start" name="start_date"  />
+      <label for="start1" class="red-text text-lighten-2" style="font-size:1.4rem;font-family:'Times New Roman'">Start Date</label>
+    </div>
+    <div id="wrapper2" class="col s5 input-field">
+      <input type="date" id="end1" class="datepicker-end" name="end_date"/>
+      <label for="end1" class="red-text text-lighten-2" style="font-size:1.4rem;font-family:'Times New Roman'">End Date</label>
+    </div>
+
+     <div id="wrapper3" class="col s5 offset-s1 input-field">
+
+      <input type="text" id="locat" class="location_ven" name="location" />
+      <label for="locat" class="red-text text-lighten-2" style="font-size:1.4rem;font-family:'Times New Roman'">Location</label>
+    </div>
+
+<div class="center">
+
+<input type="submit" value="Show  Venue" name="submit" class="btn red lighten-2"></a>
+</div>
+</div>
+     </form>
+</div>
+<div class="divider"></div>
+
+<div class="row" style="margin-top:3%">
+<div class="container">
+    <h3 class="center" style="font-family: 'Gloria Hallelujah', cursive;margin-bottom:7%;margin-top:5%">Services Available</h3>
+<div class="col l2 m3 s4">
+<div class="card-panel teal lighten-4">
+<div class="center">
+<i class="material-icons red-text small">local_airport</i><br>
+Airport Pick and Drop
+</div>
+</div>
+</div>
+<div class="col l2 m3 s4">
+<div class="card-panel teal lighten-4">
+<div class="center">
+<i class="material-icons red-text small">free_breakfast</i><br>
+Free Breakfast
+</div>
+</div>
+</div>
+<div class="col l2 m3 s4">
+<div class="card-panel teal lighten-4">
+<div class="center">
+<i class="material-icons red-text small">wifi</i><br>
+Free High speed wifi
+</div>
+</div>
+</div>
+<div class="col l2 m3 s4">
+<div class="card-panel teal lighten-4">
+<div class="center">
+<i class="material-icons red-text small">live_tv</i><br>
+LED TV with Tata Sky
+</div>
+</div>
+</div>
+<div class="col l2 m3 s4">
+<div class="card-panel teal lighten-4">
+<div class="center">
+<i class="material-icons red-text small">restaurant</i><br>
+24&#10006;7 Local Restaurant
+</div>
+</div>
+</div>
+<div class="col l2 m3 s4">
+<div class="card-panel teal lighten-4">
+<div class="center">
+<i class="material-icons red-text small">accessibility</i><br>
+Free Gymnasium
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="row">
+    <div class="container">
+    <h3 class="center" style="font-family: 'Gloria Hallelujah', cursive;margin-bottom:7%;margin-top:5%">Venues for Every Size & Need</h3>
+        <div class="col l4 m6 s12">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{% static 'hotel.jpg'%}" alt="">
+                    <a class="btn-floating btn-large halfway-fab waves-effect waves-light red white-text" style="font-size:0.8rem">&#x20b9; 1000</a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title brown-text">
+                        Hotels
+                    </span>
+                </div>
+            </div>
+            {% csrf_token %}
+        </div>
+             <div class="col l4 m6 s12">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{% static 'gardens.jpg'%}" alt="">
+                    <a class="btn-floating btn-large halfway-fab waves-effect waves-light red white-text" style="font-size:0.8rem">&#x20b9; 1700</a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title brown-text">
+Marriage Gardens
+                    </span>
+                </div>
+            </div>
+        </div>
+             <div class="col l4 m6 s12">
+            <div class="card">
+                <div class="card-image">
+                    <img  src="{% static 'farmhouses.jpg'%}" alt="">
+                    <a class="btn-floating btn-large halfway-fab waves-effect waves-light red white-text" style="font-size:0.8rem">&#x20b9; 1500</a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title brown-text">
+Wedding Lawns & Farmhouses
+                    </span>
+                </div>
+            </div>
+        </div>
+          <div class="col l4 m6 s12">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{% static 'banquethalls.jpg'%}" alt="">
+                    <a class="btn-floating btn-large halfway-fab waves-effect waves-light red white-text" style="font-size:0.8rem">&#x20b9; 2500</a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title brown-text">
+Banquet halls
+                    </span>
+                </div>
+            </div>
+        </div>
+               <div class="col l4 m6 s12">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{% static 'privateproperties.jpg'%}" alt="">
+                    <a class="btn-floating btn-large halfway-fab waves-effect waves-light red white-text" style="font-size:0.8rem">&#x20b9; 2000</a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title brown-text">
+Private Properties                    </span>
+                </div>
+            </div>
+        </div>
+               <div class="col l4 m6 s12">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{% static 'dan-ramsay-_hDFophEkyM-unsplash.jpg'%}" alt="">
+                    <a class="btn-floating btn-large halfway-fab waves-effect waves-light red white-text" style="font-size:0.8rem">&#x20b9; 5000</a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title brown-text">
+                      Sea facing Roofs
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+// Accept datepicker-start or datepicker-end, as we need to initialize both anyway.
+$("input[class*='datepicker-']").pickadate({
+  selectMonths: false,
+  selectYears: 1,
+  format: 'dd/mmm/yyyy',
+  onSet: function(obj){
+    let thisPicker = $(this)[0].$node;
+
+    // Check if this is the start date
+    let classes = thisPicker.attr("class");
+    if (classes === undefined || classes.length === 0 || classes.indexOf("datepicker-start") < 0){
+      return;
+    }
+
+    // .datepicker-start must be wrapped in a div.input-field element (in this example), and
+    // .datepicker-end must be in the next div.input-field.  Change selectors for your conditions.
+    let parent1 = thisPicker.closest("div.input-field");    // This picker's parent
+    let parent2 = parent1.next("div.input-field");          // Next picker's parent
+    let picker2 = parent2.find(".datepicker-end");          // Matching 'end' picker
+    
+    // Set end picker minimum date, or whatever you need.
+    if(obj.select){
+      let dt = new Date(obj.select);
+      picker2.pickadate('picker').set('min', dt);
+    }
+    if(obj.hasOwnProperty('clear')){
+      picker2.pickadate('picker').set('min', false);
+    }
+  }
+});
+</script>
+
+{% endblock %}
